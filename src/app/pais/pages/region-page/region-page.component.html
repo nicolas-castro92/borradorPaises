@@ -1,0 +1,17 @@
+<h3>Busqueda por Región <small> {{ regionActivada | titlecase }} </small> </h3>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <button *ngFor="let region of regiones" 
+                (click)="regionSeleccionada(region)"
+                [class]="getClaseCSS(region)"
+                class="me-2">
+            {{ region | titlecase }}
+        </button>
+    </div>
+</div>
+
+<div class="col">
+    <app-pais-table [paises]="paises"></app-pais-table>
+</div>

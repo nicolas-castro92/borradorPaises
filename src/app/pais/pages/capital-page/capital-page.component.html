@@ -1,0 +1,25 @@
+<h3>Busqueda por Capital</h3>
+<hr>
+<app-pais-input (onEnviar)="buscar($event)" 
+                placeholder="buscar Capital..."
+>
+</app-pais-input>
+
+
+<div  *ngIf="hayError; else divTable" class="row">
+    <div class="col alert alert-warning">
+        no se encontro el termino <p>  </p>
+    </div>
+</div>
+<hr>
+
+<ng-template #divTable>
+
+    
+    <div class="row" >
+        <div class="col">
+            <app-pais-table [paises]="paises" ></app-pais-table>
+        </div>
+    </div>
+
+</ng-template>
